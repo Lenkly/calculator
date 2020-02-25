@@ -1,0 +1,7 @@
+@use 'components/calculator';
+@use 'components/base';
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
