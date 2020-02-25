@@ -1,0 +1,26 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "Calculator Example Project",
+  "main": "index.js",
+  "dependencies": {
+    "htmlhint": "^0.11.0",
+    "prettier": "^1.19.1",
+    "sass": "^1.26.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "sass --watch src/styles.scss dist/styles.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lenkly/calculator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lenkly/calculator/issues"
+  },
+  "homepage": "https://github.com/Lenkly/calculator#readme"
+}
