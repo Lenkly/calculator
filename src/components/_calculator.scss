@@ -1,0 +1,13 @@
+.calc {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.calc__output {
+  flex-basis: 100%;
+}
+
+.calc__button {
+  flex-basis: calc(100% / 4);
+}
