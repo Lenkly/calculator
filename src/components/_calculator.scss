@@ -1,13 +1,38 @@
 .calc {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+  max-width: 350px;
 }
 
 .calc__output {
   flex-basis: 100%;
+  max-width: 350px;
+  font-size: 2rem;
+  font-family: "Saira Semi Condensed", sans-serif;
+  background-color: silver;
+  border-color: #000033;
 }
 
 .calc__button {
   flex-basis: calc(100% / 4);
+  font-size: 2rem;
+  font-family: "Dosis", sans-serif;
+  border-color: #000033;
+  transition: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+.calc__button--num {
+  background-color: darkorange;
+  color: white;
+}
+
+.calc__button--op {
+  background-color: dimgray;
+  color: white;
+}
+
+.calc__button--zero {
+  flex-grow: 2;
 }
