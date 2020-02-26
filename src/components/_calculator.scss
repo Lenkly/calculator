@@ -28,11 +28,23 @@
   color: white;
 }
 
-.calc__button--op {
+.calc__button--num:hover {
+  background-color: orange;
+  color: white;
+}
+.calc__button--op,
+.calc__button--res,
+.calc__button--clear {
   background-color: dimgray;
   color: white;
 }
 
+.calc__button--op:hover,
+.calc__button--res:hover,
+.calc__button--clear:hover {
+  background-color: gray;
+  color: white;
+}
 .calc__button--zero {
   flex-grow: 2;
 }
