@@ -4,7 +4,7 @@ const calcOutput = document.querySelector(".calc__output");
 const calcInputs = document.querySelectorAll(".calc__button--num"); //holt sich alle Zahlen
 const calcResult = document.querySelector(".calc__button--res");
 const calcClear = document.querySelector(".calc__button--clear");
-const calcOperators = document.querySelector(".calc__button--op");
+const calcOperators = document.querySelectorAll(".calc__button--op");
 
 function add(numberOne, numberTwo) {
   return numberOne + numberTwo;
@@ -19,12 +19,14 @@ function divide(numberOne, numberTwo) {
   return numberOne / numberTwo;
 }
 
-let numberOne = Number(calcInputs[5].innerText);
-let numberTwo = Number(calcInputs[8].innerText);
+let numberOne = 0;
+let numberTwo = 0;
+//let isOpPressed = false;
 
 function resultOutput() {
+  numberTwo = Number(calcOutput.value);
   calcOutput.value = add(numberOne, numberTwo);
-  console.log("clicked");
+  console.log("resultclick", numberOne, numberTwo, calcOutput.value);
 }
 calcResult.addEventListener("click", resultOutput);
 
@@ -43,28 +45,59 @@ calcClear.addEventListener("click", clear);
 calcInputs.forEach(addNumbers); */
 
 //+= führt dazu, dass Nummern hintereinander geschrieben werden
+calcInputs.forEach(function addNumbers(calcInput) {
+  function handleInput() {
+    calcOutput.value += calcInput.innerText;
+    console.log(calcInput.innerText);
+  }
+  calcInput.addEventListener("click", handleInput);
+});
+
+calcOperators.forEach(function addOperator(calcOperator) {
+  function operatorInput() {
+    numberOne = Number(calcOutput.value);
+    clear();
+    console.log(
+      "operatorInputClick",
+      numberOne,
+      numberTwo,
+      calcOperator.innerText
+    );
+  }
+  calcOperator.addEventListener("click", operatorInput);
+});
+/*
+function plusminus(numberOne, numberTwo) {
+  if (calcOutput.value == numberOne) {
+    numberOne = numberOne * -1;
+    calcOutput.value = numberOne;
+  } else if (calcOutput.value != numberOne && calcOutput.value == numberTwo) {
+    numberTwo = numberTwo * -1;
+    calcOutput.value = numberTwo;
+  }
+}
+
+ANDERE LÖSUNG
 function addNumbers(calcInput) {
   function handleInput() {
     calcOutput.value += calcInput.innerText;
+    console.log("handleInputClick", numberOne, numberTwo);
   }
   calcInput.addEventListener("click", handleInput);
 }
 calcInputs.forEach(addNumbers);
 
-/*
-calcInputs.forEach(function addNumbers(calcInput) {
-    calcInput.addEventListener("click")
-  console.log(calcInput.innerText);
-}); 
-
-calcOperators;
-
-function addOperatorEventListener(calcOperator) {
-  function handlecalcOperatorClick() {
+function addOperator(calcOperator) {
+  function operatorInput() {
     numberOne = Number(calcOutput.value);
-    console.log(calcOperator.innerText);
+    clear(); //Entfernt die erste Zahl, damit di zweite Zahl hinzugefügt werden kann
+    console.log(
+      "operatorInputClick",
+      numberOne,
+      numberTwo,
+      calcOperator.innerText
+    );
   }
-  calcOperator.addEventListener("click", handlecalcOperatorClick);
+  calcOperator.addEventListener("click", operatorInput);
 }
-calcOperators.forEach(addOperatorEventListener);
-*/
+calcOperators.forEach(addOperator); */
