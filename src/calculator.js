@@ -12,6 +12,7 @@ let numberTwo = 0;
 function resultOutput() {
   numberTwo = Number(calcOutput.value);
   calcOutput.value = add(numberOne, numberTwo);
+
   console.log("resultclick", numberOne, numberTwo, calcOutput.value);
 }
 calcResult.addEventListener("click", resultOutput);
