@@ -34,14 +34,16 @@
 }
 .calc__button--op,
 .calc__button--res,
-.calc__button--clear {
+.calc__button--clear,
+.calc__button--other {
   background-color: dimgray;
   color: white;
 }
 
 .calc__button--op:hover,
 .calc__button--res:hover,
-.calc__button--clear:hover {
+.calc__button--clear:hover,
+.calc__button--other:hover {
   background-color: gray;
   color: white;
 }
