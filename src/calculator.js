@@ -1,4 +1,4 @@
-"use strict";
+import { add, subtract, multiply, divide } from "./math.js";
 
 const calcOutput = document.querySelector(".calc__output");
 const calcInputs = document.querySelectorAll(".calc__button--num"); //holt sich alle Zahlen
@@ -6,22 +6,8 @@ const calcResult = document.querySelector(".calc__button--res");
 const calcClear = document.querySelector(".calc__button--clear");
 const calcOperators = document.querySelectorAll(".calc__button--op");
 
-function add(numberOne, numberTwo) {
-  return numberOne + numberTwo;
-}
-function subtract(numberOne, numberTwo) {
-  return numberOne - numberTwo;
-}
-function multiply(numberOne, numberTwo) {
-  return numberOne * numberTwo;
-}
-function divide(numberOne, numberTwo) {
-  return numberOne / numberTwo;
-}
-
 let numberOne = 0;
 let numberTwo = 0;
-//let isOpPressed = false;
 
 function resultOutput() {
   numberTwo = Number(calcOutput.value);
